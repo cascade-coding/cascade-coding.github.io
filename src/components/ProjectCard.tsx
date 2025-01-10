@@ -46,6 +46,7 @@ const ProjectCard = ({
           onClick={() => {
             const link = slugify(name, { lower: true });
             navigate(`projects/${link}`);
+            window.scrollTo(0, 0);
           }}
         >
           View Details

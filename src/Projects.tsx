@@ -15,7 +15,9 @@ const Projects = () => {
   return (
     <div className="h-dvh">
       <Nav />
-      <project.component />
+      <div className="pt-16">
+        <project.component />
+      </div>
     </div>
   );
 };
