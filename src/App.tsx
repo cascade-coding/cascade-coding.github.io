@@ -18,7 +18,7 @@ const App = () => {
           </h1>
         </section>
 
-        <section className="py-24" id="projects">
+        <section className="py-24 mt-10" id="projects">
           {projects.map((project, i) => (
             <ProjectCard key={i + Date.now()} {...project} />
           ))}
