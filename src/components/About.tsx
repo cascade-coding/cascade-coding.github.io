@@ -19,14 +19,14 @@ const About = () => {
         ready to perform in today’s fast-paced digital landscape.
       </p>
       <p className="mt-6 text-blue-500 flex items-center gap-x-2">
-        <Mail /> fahim.x@yahoo.com
+        <Mail /> fahim.real.x@gmail.com
       </p>
 
       <div className="flex items-center gap-x-4 mt-4">
         <Link to="#">
           <span className="text-purple-500 font-bold">Linkedin</span>
         </Link>
-        <Link to="#">
+        <Link to="https://github.com/cascade-coding" target="_blank">
           <span className="text-purple-500 font-bold">Github</span>
         </Link>
       </div>
