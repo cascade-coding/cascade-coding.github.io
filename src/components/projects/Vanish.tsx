@@ -4,17 +4,46 @@ const Vanish = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
           <p className="text-lg lg:text-2xl leading-relaxed tracking-wide mt-4">
-            Vanish is a powerful app that guides you to take meaningful actions
-            every day, helping you turn your ambitions into reality. You can
-            review your progress, see how well you've tackled tasks and built
-            habits, creating a powerful drive to take even better action.
+            Privacy is no longer a luxury—it’s a necessity. Vanish empowers you
+            with a shield against surveillance, letting you communicate freely
+            and securely. From sensitive information to casual chats, enjoy
+            peace of mind knowing your conversations are truly yours.
           </p>
 
           <p className="text-lg leading-relaxed tracking-wide mt-8">
-            This project is something I built for myself to stay focused and
-            consistently move forward on my own goals. Stride Journal makes it
-            easy to keep track of progress and form good habits, helping users
-            stay motivated to keep improving each day.
+            <span className="font-semibold">
+              Journalists & Whistleblowers:{" "}
+            </span>
+            Share sensitive information securely while protecting your sources.
+            Say goodbye to the fear of surveillance or data breaches—your
+            communications remain safe and confidential.
+          </p>
+
+          <p className="text-lg leading-relaxed tracking-wide mt-8">
+            <span className="font-semibold">Business Professionals: </span>
+            Exchange critical ideas, contracts, and documents with total peace
+            of mind. Safeguard your intellectual property and sensitive business
+            dealings, ensuring your information stays private and secure.
+          </p>
+
+          <p className="text-lg leading-relaxed tracking-wide mt-6">
+            <span className="font-semibold">Everyday Users: </span>
+            Keep your personal conversations and private data safe. Take control
+            of your online privacy without sacrificing convenience, empowering
+            you to communicate freely and securely in a digital world.
+          </p>
+
+          <p className="text-lg font-semibold leading-relaxed tracking-wide mt-8">
+            This project was inspired by the growing wave of censorship and
+            control over major social media platforms, chat apps, and news
+            outlets. Elon Musk's move to purchase Twitter and champion free
+            speech served as a catalyst, motivating me to create a solution that
+            empowers people to communicate freely without fear of suppression or
+            surveillance.
+            <br />
+            <br />
+            Please watch the short overview video of Vanish below to gain a
+            clear and comprehensive understanding of its features and purpose.
           </p>
         </div>
       </div>

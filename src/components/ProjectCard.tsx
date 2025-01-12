@@ -40,7 +40,7 @@ const ProjectCard = ({
             {live && <SquareArrowOutUpRight />}
           </h4>
         </Link>
-        <p className="text-lg mt-2 leading-relaxed px-8 sm:px-0">
+        <p className="text-lg mt-3 leading-relaxed px-8 sm:px-0">
           {description}
         </p>
         <button
