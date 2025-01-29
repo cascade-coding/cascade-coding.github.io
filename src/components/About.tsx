@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-    <div className="bg-stone-950 py-6 px-6 rounded-md">
+    <div className="bg-stone-900/30 py-6 px-6 rounded-md">
       <img
         className="w-24 h-24 object-cover rounded-full"
-        src="https://plus.unsplash.com/premium_photo-1689606093808-3cb4393248d2?q=80&w=120&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src="/images/profile.jpg"
         alt="my-photo"
       />
       <p className="mt-6 leading-loose tracking-wide text-lg max-w-4xl">
