@@ -2,26 +2,22 @@
 @tailwind utilities;
 
 @theme {
-  --color-bg: #fdfcf9;
-  --color-soft: #e8e6e0;
-  --color-text: #2b2b2b;
-  --color-text-2: #565656;
-  --color-accent: #d8a75d;
-  --color-accent-2: #a5bba2;
-  --color-accent-hover: #c9963f;
-  --color-pure: #ffffff;
-  --color-highlight: #a9c5cd;
-  --color-highlight-2: #e1c5a0;
-  --color-pure: #ffffff;
+  --color-bg: #FCFBF9;
+  --color-text: #333333;
+  --color-text-2: #5A5A6A;
+  --color-text-3: #777777;
+  --color-accent-1: #A88FFF;
+  --color-accent-2: #FFC973;
+  
 
   --color-lines: #dfded9;
 
   --font-work-sans: "Work Sans", sans-serif;
-  --font-primary: "Fraunces", serif;
+  --font-primary: "Poppins", serif;
 }
 
 body {
-  font-family: var(--font-primary);
+  font-family: var(--font-work-sans);
   color: var(--color-text);
   background-color: var(--color-bg);
 }
