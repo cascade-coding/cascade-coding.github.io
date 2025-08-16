@@ -38,39 +38,17 @@ if (typeof window !== 'undefined') {
 
 
 
-// mobile nav
 
-const trigger = document.querySelector(".menu_trigger") as HTMLElement | null;
-const mobileMenu = document.querySelector(".mobile_menu") as HTMLElement | null;
 
-function closeMenu(): void {
-  mobileMenu?.classList.remove("open_menu");
-}
 
-trigger?.addEventListener("click", (e: MouseEvent) => {
-  e.stopPropagation();
-  mobileMenu?.classList.toggle("open_menu");
+const openOverlayBtn = document.getElementById('openOverlay') as HTMLButtonElement | null;
+const closeOverlayBtn = document.getElementById('closeOverlay') as HTMLButtonElement | null;
+
+
+openOverlayBtn?.addEventListener("click", () => {
+  document.documentElement.classList.add("activate-overlay")
 });
 
-window.addEventListener("click", (e: MouseEvent) => {
-  const target = e.target as Node;
-
-  if (
-    mobileMenu?.classList.contains("open_menu") &&
-    !mobileMenu.contains(target) &&
-    !trigger?.contains(target)
-  ) {
-    closeMenu();
-  }
+closeOverlayBtn?.addEventListener("click", () => {
+  document.documentElement.classList.remove("activate-overlay")
 });
-
-// Close on menu link click
-if (mobileMenu) {
-  const links = mobileMenu.querySelectorAll("a");
-  links.forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
-}
-
-
-
