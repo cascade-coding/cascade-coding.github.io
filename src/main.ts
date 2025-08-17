@@ -1,5 +1,6 @@
 import Alpine from 'alpinejs';
 import { icons } from './icons';
+import { projects } from './projects';
 
 declare global {
   interface Window {
@@ -12,6 +13,8 @@ declare global {
       tailwindClasses: string;
       readonly icon: string;
     };
+
+    PROJECTS: typeof projects;
   }
 }
 
@@ -33,6 +36,10 @@ if (typeof window !== 'undefined') {
     }
   });
 
+
+  window.PROJECTS = projects;
+
+
   Alpine.start();
 }
 
@@ -45,10 +52,34 @@ const openOverlayBtn = document.getElementById('openOverlay') as HTMLButtonEleme
 const closeOverlayBtn = document.getElementById('closeOverlay') as HTMLButtonElement | null;
 
 
+// open overlay
 openOverlayBtn?.addEventListener("click", () => {
   document.documentElement.classList.add("activate-overlay")
+
+  console.log(openOverlayBtn.dataset.projectId)
+
+  const currentProjectId = openOverlayBtn.dataset.projectId;
+
+  const overlayContentWrapper = document.getElementById("overlay-content");
+
+  if (!currentProjectId || !overlayContentWrapper) return
+
+  const singleProject = projects.find(p => p.id === currentProjectId);
+
+
+  overlayContentWrapper.innerHTML = `${singleProject?.overlayContent}`
 });
 
+
+
+// close overlay
 closeOverlayBtn?.addEventListener("click", () => {
-  document.documentElement.classList.remove("activate-overlay")
+  document.documentElement.classList.remove("activate-overlay");
+
+
+  const overlayContentWrapper = document.getElementById("overlay-content");
+
+  if (!overlayContentWrapper) return
+
+  overlayContentWrapper.innerHTML = ``;
 });

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" class="activate-overlay">
+<!-- <html lang="en" class="activate-overlay"> -->
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -24,7 +25,7 @@
         class="md:text-center max-w-[1100px] flex flex-col gap-6 md:gap-10 mt-auto mx-auto"
       >
         <h1
-          class="font-primary font-bold text-3xl sm:text-4xl md:text-[2.75rem] lg:text-5xl xl:text-[3.5rem] 2xl:text-[4rem] leading-[1.2] tracking--[0.25px]"
+          class="font-primary font-bold text-3xl sm:text-4xl md:text-[2.75rem] lg:text-5xl xl:text-[3.5rem] 2xl:text-[4rem] leading-[1.2] tracking-[0.25px]"
         >
           What you see here isn’t just code—it’s a problem solved.
         </h1>
@@ -48,7 +49,7 @@
       <!-- Section Heading -->
       <div class="max-w-[1280px] 2xl:max-w-[1440px] mx-auto px-4">
         <h3
-          class="font-primary font-bold text-2xl md:text-3xl leading-[1.2] tracking--[0.25px]"
+          class="font-primary font-bold text-2xl md:text-3xl leading-[1.2] tracking-[0.25px]"
         >
           Projects with purpose
         </h3>
@@ -58,63 +59,76 @@
       </div>
 
       <!-- Projects Wrapper -->
-      <div class="max-w-[1280px] 2xl:max-w-[1440px] mx-auto px-4">
-        <div class="py-[60px] md:py-[80px]">
-          <div id="media" class="relative w-full aspect-video max-w-[620px]">
-            <iframe
-              class="absolute top-0 left-0 w-full h-full"
-              src="https://www.youtube.com/embed/a103ei5esOY"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-          </div>
+      <div
+        id="project_wrapper"
+        class="max-w-[1280px] 2xl:max-w-[1440px] mx-auto px-4"
+        x-data="{ projects: window.PROJECTS }"
+      >
+        <!-- project -->
 
-          <div class="mt-[40px] max-w-[900px] flex flex-col gap-5 md:gap-6">
-            <h3
-              class="font-primary font-semibold text-xl md:text-[26px] leading-[1.2] tracking--[0.5px]"
-            >
-              Vanish – Private by Design
-            </h3>
-
-            <p
-              class="text-text-2 text-lg md:text-xl leading-[1.4] tracking--[0.25px]"
-            >
-              Vanish isn't just a chat platform—it's your shield in the age of
-              surveillance. Whether you're a whistleblower exposing corruption,
-              a journalist protecting your sources, or someone who values
-              privacy, Vanish guarantees your conversations remain completely
-              secure and confidential.
-            </p>
-
-            <p class="md:text-lg font-medium leading-[1.4] tracking--[0.25px]">
-              Could your secrets stay secret, even from the most powerful?
-            </p>
-
-            <div>
-              <button
-                id="openOverlay"
-                class="relative text-accent-1 hover:text-accent-2 active:text-accent-2 cursor-pointer overflow-hidden group"
-              >
-                Read More
-                <span
-                  class="absolute left-0 bottom-0 rounded-2xl h-[2px] w-0 bg-accent-2 transition-all duration-300 ease-out group-hover:w-full group-active:w-full"
-                ></span>
-              </button>
+        <template x-for="project in projects" :key="project.id">
+          <div class="py-[60px] md:py-[80px]">
+            <!-- media -->
+            <div class="relative w-full aspect-video max-w-[620px]">
+              <template x-if="project.media.type === 'video'">
+                <iframe
+                  class="absolute top-0 left-0 w-full h-full"
+                  :src="project.media.url"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                >
+                </iframe>
+              </template>
+              <template x-if="project.media.type === 'image'">
+                <img
+                  class="w-full h-full object-cover"
+                  :src="project.media.url"
+                  alt=""
+                />
+              </template>
             </div>
 
-            <div class="mt-8 md:mt-10">
+            <div class="mt-[40px] max-w-[900px] flex flex-col gap-5 md:gap-6">
+              <h3
+                x-text="project.title"
+                class="font-primary font-semibold text-xl md:text-[26px] leading-[1.2] tracking-[0.5px]"
+              ></h3>
               <p
-                class="text-text-3 md:text-lg font-medium leading-[1.4] tracking--[0.25px]"
-              >
-                I built this because no existing platform truly protected
-                privacy—even from governments.
-              </p>
+                x-text="project.description"
+                class="text-text-2 text-lg md:text-xl leading-[1.4] tracking-[0.25px]"
+              ></p>
+              <p
+                x-text="project.question"
+                class="md:text-lg font-medium leading-[1.4] tracking-[0.25px]"
+              ></p>
+
+              <template x-if="project.readMoreText">
+                <div>
+                  <button
+                    id="openOverlay"
+                    class="relative text-accent-1 hover:text-accent-2 active:text-accent-2 cursor-pointer overflow-hidden group"
+                    :data-project-id="project.id"
+                  >
+                    <span x-text="project.readMoreText"></span>
+                    <span
+                      class="absolute left-0 bottom-0 rounded-2xl h-[2px] w-0 bg-accent-2 transition-all duration-300 ease-out group-hover:w-full group-active:w-full"
+                    ></span>
+                  </button>
+                </div>
+              </template>
+
+              <div class="mt-8 md:mt-10">
+                <p
+                  x-text="project.additionalInfo"
+                  class="text-text-3 md:text-lg font-medium leading-[1.4] tracking-[0.25px]"
+                ></p>
+              </div>
             </div>
           </div>
-        </div>
+        </template>
       </div>
     </section>
     <!-- End: Projects -->
@@ -147,79 +161,7 @@
 
         <!-- content -->
 
-        <div id="overlay-content">
-          <div
-            class="lg:max-w-[900px] lg:mx-auto prose prose-lg prose-indigo pt-8"
-          >
-            <h2 class="font-primary text-3xl font-extrabold mb-4 text-gray-900">
-              Privacy is a Necessity
-            </h2>
-            <p class="mb-6 text-gray-700 leading-relaxed">
-              Privacy is no longer a luxury—it’s a necessity.
-              <strong class="text-indigo-600 font-semibold">Vanish</strong>
-              empowers you with a shield against surveillance, letting you
-              communicate freely and securely. From sensitive information to
-              casual chats, enjoy peace of mind knowing your conversations are
-              truly yours.
-            </p>
-
-            <h3 class="font-primary text-2xl font-bold mt-8 mb-4 text-gray-900">
-              Who Benefits?
-            </h3>
-
-            <ul class="list-disc list-inside space-y-4 text-gray-700">
-              <li>
-                <strong class="text-indigo-600"
-                  >Journalists & Whistleblowers:</strong
-                >
-                Share sensitive information securely while protecting your
-                sources. Say goodbye to the fear of surveillance or data
-                breaches—your communications remain safe and confidential.
-              </li>
-              <li>
-                <strong class="text-indigo-600">Business Professionals:</strong>
-                Exchange critical ideas, contracts, and documents with total
-                peace of mind. Safeguard your intellectual property and
-                sensitive business dealings, ensuring your information stays
-                private and secure.
-              </li>
-              <li>
-                <strong class="text-indigo-600">Everyday Users:</strong> Keep
-                your personal conversations and private data safe. Take control
-                of your online privacy without sacrificing convenience,
-                empowering you to communicate freely and securely in a digital
-                world.
-              </li>
-            </ul>
-
-            <p class="mt-6 mb-4 text-gray-700 leading-relaxed">
-              This project was inspired by the growing wave of censorship and
-              control over major social media platforms, chat apps, and news
-              outlets.
-            </p>
-
-            <p class="mb-4 text-gray-700 leading-relaxed">
-              Watch the short overview video of
-              <strong class="text-indigo-600 font-semibold">Vanish</strong>
-              below to gain a clear and comprehensive understanding of its
-              features and purpose.
-            </p>
-          </div>
-
-          <div class="lg:max-w-[900px] lg:mx-auto py-8">
-            <div id="media" class="relative w-full aspect-video max-w-[720px]">
-              <iframe
-                class="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/a103ei5esOY"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-            </div>
-          </div>
-        </div>
+        <div id="overlay-content" class="min-h-dvh"></div>
       </div>
     </section>
 
