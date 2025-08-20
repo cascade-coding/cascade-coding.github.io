@@ -25,6 +25,11 @@ body {
 html.activate-overlay section#overlay {
   opacity: 1;
   pointer-events: all;
+  background-color: white;
+}
+
+html.activate-overlay #overlay-content {
+  min-height: 100dvh;
 }
 
 html.activate-overlay section:not(#overlay) {
