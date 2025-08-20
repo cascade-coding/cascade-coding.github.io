@@ -5,7 +5,7 @@ export default defineConfig({
     tailwindcss(),
   ],
 
-  base: "/cascade-coding.github.io/",
+  base: "/",
 
   server: {
     host: true,
