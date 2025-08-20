@@ -11,6 +11,7 @@ interface Project {
     question?: string;
     readMoreText?: string;
     liveurl?: string;
+    liveurlCTAText?: string;
     additionalInfo?: string;
     overlayContent?: string;
 }
@@ -101,6 +102,19 @@ export const projects: Project[] = [
             </div>
         </div>
     `
+    },
+    {
+        id: 'x002',
+        media: {
+            type: "image",
+            url: "./assets/trueshelf-lg.png"
+        },
+        title: "TrueShelf - Books that work",
+        description: "On TrueShelf, books aren’t here to impress — they’re here to interrupt. Each one is chosen not because it’s popular, but because it rewires something real. You don’t need hundreds of books or an endless feed. You need one… maybe five… to turn your world inside out — no matter how big you think your problem is.",
+        question: "Ever read something that made the rest of your bookshelf feel irrelevant?",
+        liveurl: "https://cascade-coding.github.io/trueshelf/",
+        liveurlCTAText: "Live View",
+        additionalInfo: "I made TrueShelf because finding one life-altering book shouldn’t feel like luck.",
     }
 ];
 
