@@ -12,8 +12,8 @@
       rel="stylesheet"
     />
     <title>Cascade-Coding</title>
-    <script type="module" crossorigin src="/assets/index-Bry3q79e.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DbqXpJyF.css">
+    <script type="module" crossorigin src="/assets/index-BTPXZsDw.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-M9SOaSdv.css">
   </head>
   <body>
     <!-- Start: Hero -->
@@ -61,13 +61,24 @@
       <div
         id="project_wrapper"
         class="max-w-[1280px] 2xl:max-w-[1440px] mx-auto px-4"
-        x-data="{ projects: window.PROJECTS }"
+        x-data="{ 
+          projects: window.PROJECTS,
+          visibleCount: 4,
+          loadMore() {
+              this.visibleCount = Math.min(this.visibleCount + 3, this.projects.length)
+          }
+        }"
       >
         <!-- project -->
-
-        <template x-for="project in projects" :key="project.id">
+        <template
+          x-for="(project, index) in projects.slice(0, visibleCount)"
+          :key="project.id"
+        >
           <div
-            class="py-[60px] border-b border-zinc-300 last:border-transparent"
+            :class="{
+              'py-[60px] border-b border-zinc-300': true,
+              'border-b-0': index === visibleCount - 1
+            }"
           >
             <!-- media -->
             <div class="relative w-full aspect-video max-w-[620px]">
@@ -252,6 +263,15 @@
             </div>
           </div>
         </template>
+
+        <!-- Load More button -->
+        <button
+          x-show="visibleCount < projects.length"
+          @click="loadMore()"
+          class="bg-amber-400 text-text py-1 px-1.5 rounded-xs cursor-pointer transition-all hover:bg-amber-500"
+        >
+          Show Me More
+        </button>
       </div>
     </section>
     <!-- End: Projects -->
