@@ -111,12 +111,12 @@ export const projects: Project[] = [
       url: "/assets/trueshelf-lg.png"
     },
     title: "TrueShelf - Books that work",
-    description: "On TrueShelf, books aren’t here to impress — they’re here to interrupt. Each one is chosen not because it’s popular, but because it rewires something real. You don’t need hundreds of books or an endless feed. You need one… maybe five… to turn your world inside out — no matter how big you think your problem is.",
+    description: "On TrueShelf, books aren't here to impress — they're here to interrupt. Each one is chosen not because it's popular, but because it rewires something real. You don't need hundreds of books or an endless feed. You need one… maybe five… to turn your world inside out — no matter how big you think your problem is.",
     question: "Ever read something that made the rest of your bookshelf feel irrelevant?",
     liveurl: "https://cascade-coding.github.io/trueshelf/",
     liveurlCTAText: "Live View",
     figmaurl: "https://www.figma.com/design/9RtrEHyb9u29Z5ap7CIlyC/4-landing-pages?node-id=0-1&p=f&t=6eTsNYbJ414pn0G3-0",
-    additionalInfo: "I made TrueShelf because finding one life-altering book shouldn’t feel like luck.",
+    additionalInfo: "I made TrueShelf because finding one life-altering book shouldn't feel like luck.",
   },
   {
     id: 'x003',
@@ -125,7 +125,7 @@ export const projects: Project[] = [
       url: "/assets/vantavpn-lg.png"
     },
     title: "VantaVPN - VPN That should exist",
-    description: "Next-level VPN with Dynamic Multi-Hop Obfuscation and a Stealth Kill Switch featuring Traffic Shaping. Military-grade encryption, zero logs, RAM-only servers, and open-source clients. Audited and monitored 24/7 for ultimate privacy and security—no compromises. A VPN that should exist… because most “no-log” VPNs? Yeah, they log.",
+    description: "Next-level VPN with Dynamic Multi-Hop Obfuscation and a Stealth Kill Switch featuring Traffic Shaping. Military-grade encryption, zero logs, RAM-only servers, and open-source clients. Audited and monitored 24/7 for ultimate privacy and security—no compromises. A VPN that should exist… because most \"no-log\" VPNs? Yeah, they log.",
     question: "If it were in your power, would you launch this VPN for the world?",
     liveurl: "https://cascade-coding.github.io/vantavpn/",
     liveurlCTAText: "Live View",
