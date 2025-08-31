@@ -131,6 +131,20 @@ export const projects: Project[] = [
     liveurlCTAText: "Live View",
     figmaurl: "https://www.figma.com/design/YKV3q5UCPYGyXiBO2hcH3H/VantaVPN?node-id=0-1&t=VolImTuY8EUiZrna-1",
     additionalInfo: "I created this VPN UI because VPNs like this should be more common.",
+  },
+  {
+    id: 'x004',
+    media: {
+      type: "image",
+      url: "/assets/lawfare-lg.png"
+    },
+    title: "Lawfare - Personal Lawayer Theme",
+    description: "A modern, premium UI crafted for a personal lawyer's website—designed to reflect professionalism, trust, and authority. The theming emphasizes quality and credibility while addressing the client's need for confidence and clarity.",
+    question: "Looking for someone who loves turning personal websites into powerful digital identities?",
+    liveurl: "https://cascade-coding.github.io/lawfare/",
+    liveurlCTAText: "Live View",
+    figmaurl: "https://www.figma.com/design/O1h1UuCilRww4iChdHUDo6/Lawfare?node-id=0-1&t=lQLIDnKei6cTH4pX-1",
+    additionalInfo: "My fascination with the legal world inspired me to design a clean, powerful UI/UX for a personal lawyer's website.",
   }
 ];
 
