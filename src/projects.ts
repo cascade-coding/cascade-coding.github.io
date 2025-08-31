@@ -1,35 +1,35 @@
 type MediaType = "video" | "image";
 
 interface Project {
-    id: string;
-    media: {
-        type: MediaType;
-        url: string;
-    };
-    title: string;
-    description: string;
-    question?: string;
-    readMoreText?: string;
-    liveurl?: string;
-    figmaurl?: string;
-    liveurlCTAText?: string;
-    additionalInfo?: string;
-    overlayContent?: string;
+  id: string;
+  media: {
+    type: MediaType;
+    url: string;
+  };
+  title: string;
+  description: string;
+  question?: string;
+  readMoreText?: string;
+  liveurl?: string;
+  figmaurl?: string;
+  liveurlCTAText?: string;
+  additionalInfo?: string;
+  overlayContent?: string;
 }
 
 export const projects: Project[] = [
-    {
-        id: 'x001',
-        media: {
-            type: "video",
-            url: "https://www.youtube.com/embed/a103ei5esOY"
-        },
-        title: "Vanish – Private by Design",
-        description: "Vanish isn't just a chat platform—it's your shield in the age of surveillance. Whether you're a whistleblower exposing corruption, a journalist protecting your sources, or someone who values privacy, Vanish guarantees your conversations remain completely secure and confidential.",
-        question: "Could your secrets stay secret, even from the most powerful?",
-        readMoreText: "Read More",
-        additionalInfo: "I built this because no existing platform truly protected privacy—even from governments.",
-        overlayContent: `
+  {
+    id: 'x001',
+    media: {
+      type: "video",
+      url: "https://www.youtube.com/embed/a103ei5esOY"
+    },
+    title: "Vanish – Private by Design",
+    description: "Vanish isn't just a chat platform—it's your shield in the age of surveillance. Whether you're a whistleblower exposing corruption, a journalist protecting your sources, or someone who values privacy, Vanish guarantees your conversations remain completely secure and confidential.",
+    question: "Could your secrets stay secret, even from the most powerful?",
+    readMoreText: "Read More",
+    additionalInfo: "I built this because no existing platform truly protected privacy—even from governments.",
+    overlayContent: `
         <div
             class="lg:max-w-[900px] lg:mx-auto prose prose-lg prose-indigo pt-8"
         >
@@ -103,21 +103,35 @@ export const projects: Project[] = [
             </div>
         </div>
     `
+  },
+  {
+    id: 'x002',
+    media: {
+      type: "image",
+      url: "/assets/trueshelf-lg.png"
     },
-    {
-        id: 'x002',
-        media: {
-            type: "image",
-            url: "/assets/trueshelf-lg.png"
-        }, 
-        title: "TrueShelf - Books that work",
-        description: "On TrueShelf, books aren’t here to impress — they’re here to interrupt. Each one is chosen not because it’s popular, but because it rewires something real. You don’t need hundreds of books or an endless feed. You need one… maybe five… to turn your world inside out — no matter how big you think your problem is.",
-        question: "Ever read something that made the rest of your bookshelf feel irrelevant?",
-        liveurl: "https://cascade-coding.github.io/trueshelf/",
-        liveurlCTAText: "Live View",
-        figmaurl: "https://www.figma.com/design/9RtrEHyb9u29Z5ap7CIlyC/4-landing-pages?node-id=0-1&p=f&t=6eTsNYbJ414pn0G3-0",
-        additionalInfo: "I made TrueShelf because finding one life-altering book shouldn’t feel like luck.",
-    }
+    title: "TrueShelf - Books that work",
+    description: "On TrueShelf, books aren’t here to impress — they’re here to interrupt. Each one is chosen not because it’s popular, but because it rewires something real. You don’t need hundreds of books or an endless feed. You need one… maybe five… to turn your world inside out — no matter how big you think your problem is.",
+    question: "Ever read something that made the rest of your bookshelf feel irrelevant?",
+    liveurl: "https://cascade-coding.github.io/trueshelf/",
+    liveurlCTAText: "Live View",
+    figmaurl: "https://www.figma.com/design/9RtrEHyb9u29Z5ap7CIlyC/4-landing-pages?node-id=0-1&p=f&t=6eTsNYbJ414pn0G3-0",
+    additionalInfo: "I made TrueShelf because finding one life-altering book shouldn’t feel like luck.",
+  },
+  {
+    id: 'x003',
+    media: {
+      type: "image",
+      url: "/assets/vantavpn-lg.png"
+    },
+    title: "VantaVPN - VPN That should exist",
+    description: "Next-level VPN with Dynamic Multi-Hop Obfuscation and a Stealth Kill Switch featuring Traffic Shaping. Military-grade encryption, zero logs, RAM-only servers, and open-source clients. Audited and monitored 24/7 for ultimate privacy and security—no compromises. A VPN that should exist… because most “no-log” VPNs? Yeah, they log.",
+    question: "If it were in your power, would you launch this VPN for the world?",
+    liveurl: "https://cascade-coding.github.io/vantavpn/",
+    liveurlCTAText: "Live View",
+    figmaurl: "https://www.figma.com/design/YKV3q5UCPYGyXiBO2hcH3H/VantaVPN?node-id=0-1&t=VolImTuY8EUiZrna-1",
+    additionalInfo: "I created this VPN UI because VPNs like this should be more common.",
+  }
 ];
 
 
