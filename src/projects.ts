@@ -12,6 +12,7 @@ interface Project {
   readMoreText?: string;
   liveurl?: string;
   figmaurl?: string;
+  githuburl?: string;
   liveurlCTAText?: string;
   additionalInfo?: string;
   overlayContent?: string;
@@ -145,7 +146,19 @@ export const projects: Project[] = [
     liveurlCTAText: "Live View",
     figmaurl: "https://www.figma.com/design/O1h1UuCilRww4iChdHUDo6/Lawfare?node-id=0-1&t=lQLIDnKei6cTH4pX-1",
     additionalInfo: "My fascination with the legal world inspired me to design a clean, powerful UI/UX for a personal lawyer's website.",
-  }
+  },
+  {
+    id: 'x006',
+    media: {
+      type: "image",
+      url: "/assets/stride-lg.png"
+    },
+    title: "Stride - Personal Logging System",
+    description: "Stride is a logging app that helps you regain control, stay grounded, and move forward—especially when life gets tough.",
+    question: "When chaos hits, how do you take back control of your day?",
+    githuburl: "https://github.com/cascade-coding/stride.git",
+    additionalInfo: "I created this to navigate difficult days—a personal system for logging, journaling, and finding clarity.",
+  },
 ];
 
 
