@@ -148,7 +148,7 @@ export const projects: Project[] = [
     additionalInfo: "My fascination with the legal world inspired me to design a clean, powerful UI/UX for a personal lawyer's website.",
   },
   {
-    id: 'x006',
+    id: 'x005',
     media: {
       type: "image",
       url: "/assets/stride-lg.png"
