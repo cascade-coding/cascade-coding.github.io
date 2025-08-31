@@ -2,6 +2,7 @@ import Alpine from 'alpinejs';
 import { icons } from './icons';
 import { projects } from './projects';
 
+
 declare global {
   interface Window {
     Alpine: typeof Alpine;
@@ -47,7 +48,6 @@ if (typeof window !== 'undefined') {
 
 
 
-
 const openOverlayBtn = document.getElementById('openOverlay') as HTMLButtonElement | null;
 const closeOverlayBtn = document.getElementById('closeOverlay') as HTMLButtonElement | null;
 
@@ -66,8 +66,9 @@ openOverlayBtn?.addEventListener("click", () => {
 
   const singleProject = projects.find(p => p.id === currentProjectId);
 
-
   overlayContentWrapper.innerHTML = `${singleProject?.overlayContent}`
+
+  window.scrollTo({ top: 0, behavior: 'instant' });
 });
 
 
@@ -76,10 +77,26 @@ openOverlayBtn?.addEventListener("click", () => {
 closeOverlayBtn?.addEventListener("click", () => {
   document.documentElement.classList.remove("activate-overlay");
 
-
   const overlayContentWrapper = document.getElementById("overlay-content");
 
   if (!overlayContentWrapper) return
 
   overlayContentWrapper.innerHTML = ``;
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

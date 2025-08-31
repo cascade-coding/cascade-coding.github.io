@@ -11,6 +11,7 @@ interface Project {
     question?: string;
     readMoreText?: string;
     liveurl?: string;
+    figmaurl?: string;
     liveurlCTAText?: string;
     additionalInfo?: string;
     overlayContent?: string;
@@ -114,6 +115,7 @@ export const projects: Project[] = [
         question: "Ever read something that made the rest of your bookshelf feel irrelevant?",
         liveurl: "https://cascade-coding.github.io/trueshelf/",
         liveurlCTAText: "Live View",
+        figmaurl: "https://www.figma.com/design/9RtrEHyb9u29Z5ap7CIlyC/4-landing-pages?node-id=0-1&p=f&t=6eTsNYbJ414pn0G3-0",
         additionalInfo: "I made TrueShelf because finding one life-altering book shouldn’t feel like luck.",
     }
 ];

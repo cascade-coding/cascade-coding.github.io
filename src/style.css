@@ -6,7 +6,7 @@
   --color-text: #333333;
   --color-text-2: #5a5a6a;
   --color-text-3: #777777;
-  --color-accent-1: #a88fff;
+  --color-accent-1: #5729f6;
   --color-accent-2: #ffc973;
 
   --color-lines: #dfded9;
@@ -35,3 +35,5 @@ html.activate-overlay #overlay-content {
 html.activate-overlay section:not(#overlay) {
   display: none;
 }
+
+
