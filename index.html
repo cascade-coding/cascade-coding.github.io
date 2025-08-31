@@ -12,13 +12,13 @@
       rel="stylesheet"
     />
     <title>Cascade-Coding</title>
-    <script type="module" crossorigin src="/assets/index-Cy8d0PoO.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BSTJsuKZ.css">
+    <script type="module" crossorigin src="/assets/index-DSvChJl7.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-B7DgN6CZ.css">
   </head>
   <body>
     <!-- Start: Hero -->
     <section
-      class="bg-gradient-to-b from-[#FCFBF9] to-[#EDE8F2] min-h-[440px] md:min-h-[620px] flex flex-col px-4 relative"
+      class="bg-gradient-to-b from-[#FCF0AB] to-[#D1ABF7] min-h-[440px] md:min-h-[620px] flex flex-col px-4 relative"
     >
       <div
         class="md:text-center max-w-[1100px] flex flex-col gap-6 md:gap-10 mt-auto mx-auto"
@@ -29,14 +29,14 @@
           What you see here isn’t just code—it’s a problem solved.
         </h1>
         <p
-          class="text-lg sm:text-xl md:text-[22px] leading-[1.3] tracking-wide text-text-2"
+          class="text-lg sm:text-xl md:text-[22px] leading-[1.3] tracking-wide text-text"
         >
           Every decision here has a purpose—even the ones you might not notice
           at first.
         </p>
       </div>
       <div class="md:text-center mt-auto mb-[80px]">
-        <p class="font-primary font-medium md:text-lg text-text-2">
+        <p class="font-primary font-medium md:text-lg text-text">
           Have you noticed how the simplest solutions often hide in plain sight?
         </p>
       </div>
@@ -84,8 +84,10 @@
                 </iframe>
               </template>
               <template x-if="project.media.type === 'image'">
-                <div
-                  class="group cursor-pointer hover:border-accent-1 active:border-accent-1 border-2 border-transparent"
+                <a
+                  :href="project.liveurl"
+                  target="_blank"
+                  class="block group cursor-pointer hover:border-accent-1 active:border-accent-1 border-2 border-transparent"
                 >
                   <div class="gradient-overlay group-hover:opacity-30"></div>
                   <img
@@ -93,7 +95,7 @@
                     :src="project.media.url"
                     alt=""
                   />
-                </div>
+                </a>
               </template>
             </div>
 
@@ -252,30 +254,17 @@
         <p
           class="text-lg text-text mt-5 max-w-[760px] leading-[1.4] tracking-wide"
         >
-          I’m Fahim. I build web apps, APIs, and full-stack systems that just
+          I'm Fahim. I build web apps, APIs, and full-stack systems that just
           work — fast, reliable, and built around people. Starting fresh or
           improving what you already have, I make tools that keep up with your
           world. Every line of code, every click, every pixel exists to make
           your problems vanish.
         </p>
         <div
-          class="text-lg text-text mt-5 max-w-[760px] leading-[1.4] tracking-wide flex items-center gap-0.5"
+          class="text-lg text-text mt-5 max-w-[760px] leading-[1.4] tracking-wide flex items-center justify-start flex-wrap gap-0.5"
         >
-          One email. No forms. Quick Replay
-          <svg
-            width="16"
-            height="17"
-            viewBox="0 0 16 17"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M2.6665 8.5H13.3332M13.3332 8.5L9.33317 4.5M13.3332 8.5L9.33317 12.5"
-              stroke="#1C274C"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
+          <span class="inline-block pr-1">One email. No forms. Quick Replay</span>
+ 
           <a
             class="decoration-1 decoration-dotted underline underline-offset-4"
             href="https://mail.google.com/mail/?view=cm&fs=1&to=cascade-coading@email.com"
