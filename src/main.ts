@@ -1,4 +1,6 @@
 import Alpine from 'alpinejs';
+import { gsap } from "gsap";
+
 import { icons } from './icons';
 import { projects } from './projects';
 
@@ -89,10 +91,36 @@ closeOverlayBtn?.addEventListener("click", () => {
 
 
 
+window.addEventListener("DOMContentLoaded", () => {
 
 
+  gsap.from(".word", {
+    y: 40,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power3.out",
+    stagger: 0.1
+  });
 
 
+  gsap.from(".subheadline", {
+    opacity: 0,
+    y: 20,
+    duration: 0.8,
+    ease: "power2.out",
+    delay: 0.5
+  });
+
+  gsap.from(".main-ctas", {
+    y: 30,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power2.out",
+    stagger: 0.15,
+    delay: 0.8
+  });
+
+});
 
 
 
