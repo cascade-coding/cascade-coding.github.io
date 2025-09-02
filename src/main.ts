@@ -101,14 +101,16 @@ function runHeroAnimations() {
     opacity: 0,
     duration: 0.6,
     ease: "power3.out",
-    stagger: 0.1
+    stagger: 0.1,
+    delay: 0.4
   });
 
   gsap.from(".subheadline", {
     opacity: 0,
     y: 20,
     duration: 0.8,
-    ease: "power2.out"
+    ease: "power2.out",
+    delay: 0.6
   });
 
   gsap.from(".main-ctas", {
@@ -116,7 +118,8 @@ function runHeroAnimations() {
     opacity: 0,
     duration: 0.6,
     ease: "power2.out",
-    stagger: 0.15
+    stagger: 0.15,
+    delay: 0.8
   });
 }
 
@@ -125,12 +128,12 @@ function runHeroAnimations() {
 function showHero() {
   gsap.to("body", {
     opacity: 1,
-    duration: 1,
+    duration: 0.5,
     ease: "power2.out",
     onComplete: () => {
       const heroContent = document.querySelector(".hero-content");
-      heroContent?.classList.add("opacity-100");
       runHeroAnimations();
+      heroContent?.classList.add("opacity-100");
     }
   });
 }
