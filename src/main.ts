@@ -120,17 +120,23 @@ function runHeroAnimations() {
   });
 }
 
-heroImg.onload = () => {
-  gsap.to("body", { opacity: 1, duration: 1, ease: "power2.out" });
 
-  runHeroAnimations();
-};
 
-heroImg.onerror = () => {
-  gsap.to("body", { opacity: 1, duration: 1, ease: "power2.out" });
-  runHeroAnimations();
-};
+function showHero() {
+  gsap.to("body", {
+    opacity: 1,
+    duration: 1,
+    ease: "power2.out",
+    onComplete: () => {
+      const heroContent = document.querySelector(".hero-content");
+      heroContent?.classList.add("opacity-100");
+      runHeroAnimations();
+    }
+  });
+}
 
+heroImg.onload = showHero;
+heroImg.onerror = showHero;
 
 
 
