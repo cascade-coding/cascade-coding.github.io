@@ -88,11 +88,49 @@ closeOverlayBtn?.addEventListener("click", () => {
 
 
 
-window.addEventListener("load", () => {
-  gsap.from(".word", { y: 40, opacity: 0, duration: 0.6, ease: "power3.out", stagger: 0.1 });
-  gsap.from(".subheadline", { opacity: 0, y: 20, duration: 0.8, ease: "power2.out" });
-  gsap.from(".main-ctas", { y: 30, opacity: 0, duration: 0.6, ease: "power2.out", stagger: 0.15 });
-});
+
+
+// hero animations
+
+const heroImg = new Image();
+heroImg.src = "/assets/hero-bg.png";
+
+function runHeroAnimations() {
+  gsap.from(".word", {
+    y: 40,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power3.out",
+    stagger: 0.1
+  });
+
+  gsap.from(".subheadline", {
+    opacity: 0,
+    y: 20,
+    duration: 0.8,
+    ease: "power2.out"
+  });
+
+  gsap.from(".main-ctas", {
+    y: 30,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power2.out",
+    stagger: 0.15
+  });
+}
+
+heroImg.onload = () => {
+  gsap.to("body", { opacity: 1, duration: 1, ease: "power2.out" });
+
+  runHeroAnimations();
+};
+
+heroImg.onerror = () => {
+  gsap.to("body", { opacity: 1, duration: 1, ease: "power2.out" });
+  runHeroAnimations();
+};
+
 
 
 
