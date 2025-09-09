@@ -151,6 +151,18 @@ export const projects: Project[] = [
     id: 'x005',
     media: {
       type: "image",
+      url: "/assets/dental-design-lg.png"
+    },
+    title: "Dental Design – Premium WordPress Theme",
+    description: "A sleek, modern WordPress theme built for dental practices. It balances professionalism with approachability, instilling trust and care from the first click. Fully customizable with an intuitive, user-friendly design for seamless patient engagement.",
+    liveurl: "https://cascade-coding.github.io/dental-design-ui/",
+    liveurlCTAText: "Theme Preview",
+    githuburl: "https://github.com/cascade-coding/dental_design_theme"
+  },
+  {
+    id: 'x006',
+    media: {
+      type: "image",
       url: "/assets/stride-lg.png"
     },
     title: "Stride - Personal Logging System",

@@ -148,14 +148,19 @@
                 class="text-text-2 text-lg md:text-xl leading-[1.4] tracking-[0.25px]"
               ></p>
 
+              <template x-if="project.question">
               <p
                 x-text="project.question"
                 class="md:text-lg font-medium leading-[1.4] tracking-[0.25px]"
               ></p>
+              </template>
+
+              <template x-if="project.additionalInfo">
               <p
                 x-text="project.additionalInfo"
                 class="md:text-lg font-medium leading-[1.4] tracking-[0.25px]"
               ></p>
+              </template>
 
               <template x-if="project.readMoreText">
                 <div>
