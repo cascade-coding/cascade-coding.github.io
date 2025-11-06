@@ -8,65 +8,95 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap"
       rel="stylesheet"
     />
+
     <title>Cascade-Coding</title>
-    <script type="module" crossorigin src="/assets/index-DrsFd2On.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-goYJ8-9w.css">
+    <script type="module" crossorigin src="/assets/index-BK0b-92b.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DPGOenwQ.css">
   </head>
   <body>
     <!-- Start: Hero -->
-    <section
-      class="bg-[#07349C] min-h-[640px] flex flex-col justify-center px-4 relative"
-    >
-      <div class="absolute inset-0">
-        <div
-          class="bg-[url('/assets/hero-bg.png')] bg-cover bg-center opacity-15 w-full h-full"
-        ></div>
-      </div>
+    <section class="min-h-[640px] flex flex-col justify-center px-4 relative bg-zinc-900">
+      <div class="absolute inset-0 hero-bg-wrapper"></div>
 
       <div
-        class="max-w-[900px] flex flex-col gap-5 md:gap-6 -mt-16 relative z-40 hero-content opacity-0"
+        class="max-w-[900px] flex flex-col md:flex-row md:items-center md:justify-center gap-5 md:gap-6 -mt-16 relative z-40 hero-content opacity-0"
       >
-        <h1
-          class="headline text-white font-bold text-3xl sm:text-4xl md:text-[2.75rem] lg:text-5xl xl:text-[3.5rem] 2xl:text-[4rem] leading-[1.2] tracking-[0.25px]"
+        <div
+          class="profile-card min-w-[260px] mt-[60px] md:mt-auto py-5 px-6 bg-[#FBFAFA]/10 rounded-xl border border-[#878787]/40 self-start"
         >
-          <span class="word">I</span>
-          <span class="word">make</span>
-          <span class="word">the</span>
-          <span class="word">web</span>
-          <span class="word">feel</span>
-          <span class="word">effortless</span>
-          <span class="word">for</span>
-          <span class="word">your</span>
-          <span class="word">users.</span>
-        </h1>
+          <div class="flex items-center justify-center">
+            <div
+              class="max-w-[150px] min-h-[150px] rounded-[34px] bg-gray-800 flex items-center justify-center"
+            >
+              <img
+                src="/assets/profile-pic.png"
+                alt="profile-pic"
+                class="w-full h-auto block"
+                onerror="this.style.display='none'; this.parentElement.classList.add('bg-gray-700', 'text-gray-400'); this.parentElement.textContent=' ';"
+              />
+            </div>
+          </div>
 
-        <p
-          class="subheadline text-lg sm:text-xl md:text-[22px] leading-[1.3] tracking-wide text-white"
-        >
-          <span class="text-accent-2 font-medium">Hey there! I'm Fahim,</span> a
-          full-stack web apps developer. I take your ideas and turn them into
-          apps people actually want to use.
-        </p>
+          <div>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=cascade.coding@gmail.com"
+              target="_blank"
+              class="pt-5 block"
+            >
+              cascade.coding@gmail.com
+            </a>
+            <div class="flex gap-4 pt-2.5">
+              <a
+                href="https://www.upwork.com/freelancers/~01f8470b201a17924b"
+                target="_blank"
+                class="flex items-center justify-center p-1.5 w-[32px] h-[32px] rounded-full bg-[#576162]"
+              >
+                <div x-data="iconComponent('upwork', '')" x-html="icon"></div>
+              </a>
 
-        <div class="main-ctas mt-5 flex items-center gap-5 select-none">
-          <a
-            href="#projects"
-            class="py-2 px-2.5 border border-white text-white hover:bg-accent-1 transition-all"
-            >Check My Projects</a
-          >
-          <a
-            href="#contact"
-            class="py-2 px-2.5 border border-white text-white hover:bg-accent-1 transition-all"
-            >Get in Touch</a
-          >
+              <a
+                href="https://github.com/cascade-coding"
+                target="_blank"
+                class="flex items-center justify-center p-1.5 w-[32px] h-[32px] rounded-full bg-[#576162]"
+              >
+                <div x-data="iconComponent('github', '')" x-html="icon"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h1 class="headline text-white text-[22px] md:text-[26px]">
+            <span class="word">Hey </span>
+            <span class="word">there!</span>
+            <span class="word">I’m Fahim.</span>
+          </h1>
+
+          <p class="subheadline text-lg md:text-xl text-white mt-2">
+            I'm a full-stack web developer with over 3 years of experience. I
+            love making web apps that feel easy and work great. I take ideas and
+            turn them into apps people actually want to use.
+          </p>
+
+          <div class="main-ctas mt-6 flex items-center gap-5 select-none">
+            <a
+              href="#projects"
+              class="py-2 px-2.5 rounded-sm border-2 border-accent-1 text-white bg-[#023508] hover:bg-[#03630E] active:bg-[#03630E]"
+              >See My Projects</a
+            >
+          </div>
+
+          <div class="pt-6 flex gap-1.5 offers">
+            <div class="w-[4px] bg-accent-1"></div>
+            <p class="offers-text"></p>
+          </div>
         </div>
       </div>
     </section>
@@ -77,13 +107,10 @@
       <!-- Section Heading -->
       <div class="max-w-[1280px] 2xl:max-w-[1440px] mx-auto px-4">
         <h3
-          class="font-primary font-bold text-2xl md:text-3xl leading-[1.2] tracking-[0.25px]"
+          class="text-accent-1 font-bold text-2xl md:text-3xl leading-[1.2] tracking-[0.25px]"
         >
           Projects with purpose
         </h3>
-        <p class="italic text-lg md:text-xl text-text-2 mt-5.5">
-          Things done with care stand out.
-        </p>
       </div>
 
       <!-- Projects Wrapper -->
@@ -105,7 +132,7 @@
         >
           <div
             :class="{
-              'py-[60px] border-b border-zinc-300': true,
+              'py-[60px] border-b border-lines': true,
               'border-b-0': index === visibleCount - 1
             }"
           >
@@ -149,18 +176,18 @@
                 class="text-text-2 text-lg md:text-xl leading-[1.4] tracking-[0.25px]"
               ></p>
 
-              <template x-if="project.question">
-              <p
-                x-text="project.question"
-                class="md:text-lg font-medium leading-[1.4] tracking-[0.25px]"
-              ></p>
-              </template>
+              <!-- <template x-if="project.question">
+                <p
+                  x-text="project.question"
+                  class="md:text-lg font-medium leading-[1.4] tracking-[0.25px]"
+                ></p>
+              </template> -->
 
               <template x-if="project.additionalInfo">
-              <p
-                x-text="project.additionalInfo"
-                class="md:text-lg font-medium leading-[1.4] tracking-[0.25px]"
-              ></p>
+                <p
+                  x-text="project.additionalInfo"
+                  class="md:text-lg font-medium leading-[1.4] tracking-[0.25px]"
+                ></p>
               </template>
 
               <template x-if="project.readMoreText">
@@ -274,7 +301,7 @@
                             <g
                               id="Dribbble-Light-Preview"
                               transform="translate(-140.000000, -7559.000000)"
-                              fill="#000000"
+                              fill="#ffffff"
                             >
                               <g
                                 id="icons"
@@ -302,7 +329,7 @@
         <button
           x-show="visibleCount < projects.length"
           @click="loadMore()"
-          class="bg-amber-400 text-text py-1 px-1.5 rounded-xs cursor-pointer transition-all hover:bg-amber-500"
+          class="bg-amber-600 text-text py-1 px-1.5 rounded-xs cursor-pointer transition-all hover:bg-amber-700 active:bg-amber-700"
         >
           Show Me More
         </button>
@@ -345,30 +372,31 @@
     <!-- contact Info -->
     <section
       id="contact"
-      class="pt-[40px] md:pt-[60px] pb-[100px] border-t border-[#A88FFF]"
+      class="pt-[40px] md:pt-[60px] pb-[100px] border-t border-zinc-700"
     >
       <!-- Section Heading -->
       <div class="max-w-[1280px] 2xl:max-w-[1440px] mx-auto px-4">
-        <h5
-          class="font-primary font-medium text-lg leading-[1.2] tracking-[0.25px]"
-        >
+        <h5 class="font-bold text-lg leading-[1.2] tracking-[0.25px]">
           Let's build something
         </h5>
         <p
           class="text-lg text-text mt-5 max-w-[800px] leading-[1.4] tracking-wide"
         >
-          Looking to launch something new or upgrade your current site? This is
-          where you get custom-built websites and web apps that looks better and run smoothly.
+          If you're looking to launch something new or upgrade your current
+          site? This is where you get custom-built websites and web apps that
+          works great and run smoothly.
           <br />
           <br />
-          Some of my toolkit includes React.js, Next.js, WordPress, PHP, MySQL,
-          and UI/UX design, all tailored to fit your
+          Some of my toolkit includes TailwindCSS, React.js, Next.js, Laravel,
+          WordPress, PHP, MySQL, and UI/UX design, all tailored to fit your
           business needs.
         </p>
         <div
           class="text-lg text-text mt-5 max-w-[760px] leading-[1.4] tracking-wide flex items-center justify-start flex-wrap gap-0.5"
         >
-          <span class="inline-block pr-1">One email. Quick Replay</span>
+          <span class="inline-block pr-1"
+            >Send me an email, and I'll reply quick.</span
+          >
 
           <a
             class="decoration-1 decoration-dotted underline underline-offset-4"
@@ -398,10 +426,10 @@
 
     <!-- footer/contact info -->
     <footer>
-      <div class="bg-[#F9F6F1] py-4 text-center text-text-2 select-none">
+      <div class="bg-zinc-900 py-4 text-center text-white select-none">
         © 2025 cascade-coding
       </div>
     </footer>
-
+
   </body>
 </html>
