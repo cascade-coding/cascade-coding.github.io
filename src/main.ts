@@ -96,7 +96,7 @@ closeOverlayBtn?.addEventListener("click", () => {
 function runHeroAnimations() {
 
   gsap.from(".profile-card", {
-    x: -100,      
+    x: -100,
     opacity: 0,
     duration: 0.6,
     ease: "power2.out",
@@ -167,19 +167,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function typeWriter() {
   new TypeIt(".offers-text", {
-    strings: [
-      "Launch your idea into a real web app.",
-      "Create innovative web apps.",
-      "Convert pixel-perfect design into functional site.",
-      "Turn concepts into web apps users love.",
-      "Launch lightning-fast, modern websites that perform."
-    ],
-    speed: 60,
-    deleteSpeed: 40,
+    speed: 25,
+    deleteSpeed: 15,
     breakLines: false,
-    nextStringDelay: 5000,
     loop: true,
     waitUntilVisible: true,
-    cursor: false
-  }).go();
+    cursor: false,
+  })
+    .type("Launch your idea into a real web app.")
+    .pause(4000) 
+    .delete()
+    .pause(200)
+    .type("Create innovative web apps.")
+    .pause(4000)
+    .delete()
+    .pause(200)
+    .type("Convert pixel-perfect design into functional site.")
+    .pause(4000)
+    .delete()
+    .pause(200)
+    .type("Turn concepts into web apps users love.")
+    .pause(4000)
+    .delete()
+    .pause(200)
+    .type("Launch lightning-fast, modern websites that perform.")
+    .pause(4000)
+    .delete()
+    .pause(200)
+    .go();
+
 }
