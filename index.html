@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Cascade-Coding</title>
+  </head>
+  <body>
+    <!-- Start: Hero -->
+    <section class="min-h-[640px] flex flex-col justify-center px-4 relative bg-zinc-900">
+      <div class="absolute inset-0 hero-bg-wrapper"></div>
+
+      <div
+        class="max-w-[900px] flex flex-col md:flex-row md:items-center md:justify-center gap-5 md:gap-6 -mt-16 relative z-40 hero-content opacity-0"
+      >
+        <div
+          class="profile-card min-w-[260px] mt-[60px] md:mt-auto py-5 px-6 bg-[#FBFAFA]/10 rounded-xl border border-[#878787]/40 self-start"
+        >
+          <div class="flex items-center justify-center">
+            <div
+              class="max-w-[150px] min-h-[150px] rounded-[34px] bg-gray-800 flex items-center justify-center"
+            >
+              <img
+                src="/assets/profile-pic.png"
+                alt="profile-pic"
+                class="w-full h-auto block"
+                onerror="this.style.display='none'; this.parentElement.classList.add('bg-gray-700', 'text-gray-400'); this.parentElement.textContent=' ';"
+              />
+            </div>
+          </div>
+
+          <div>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=cascade.coding@gmail.com"
+              target="_blank"
+              class="pt-5 block"
+            >
+              cascade.coding@gmail.com
+            </a>
+            <div class="flex gap-4 pt-2.5">
+              <a
+                href="https://www.upwork.com/freelancers/~01f8470b201a17924b"
+                target="_blank"
+                class="flex items-center justify-center p-1.5 w-[32px] h-[32px] rounded-full bg-[#576162]"
+              >
+                <div x-data="iconComponent('upwork', '')" x-html="icon"></div>
+              </a>
+
+              <a
+                href="https://github.com/cascade-coding"
+                target="_blank"
+                class="flex items-center justify-center p-1.5 w-[32px] h-[32px] rounded-full bg-[#576162]"
+              >
+                <div x-data="iconComponent('github', '')" x-html="icon"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h1 class="headline text-white text-[22px] md:text-[26px]">
+            <span class="word">Hey </span>
+            <span class="word">there!</span>
+            <span class="word">I’m Fahim.</span>
+          </h1>
+
+          <p class="subheadline text-lg md:text-xl text-white mt-2">
+            I'm a full-stack web developer with over 3 years of experience. I
+            love making web apps that feel easy and work great. I take ideas and
+            turn them into apps people actually want to use.
+          </p>
+
+          <div class="main-ctas mt-6 flex items-center gap-5 select-none">
+            <a
+              href="#projects"
+              class="py-2 px-2.5 rounded-sm border-2 border-accent-1 text-white bg-[#023508] hover:bg-[#03630E] active:bg-[#03630E]"
+              >See My Projects</a
+            >
+          </div>
+
+          <div class="pt-6 flex gap-1.5 offers">
+            <div class="w-[4px] bg-accent-1"></div>
+            <p class="offers-text"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End: Hero -->
+
+    <!-- Start: Projects -->
+    <section id="projects" class="pt-[60px] md:pt-[100px] pb-[100px]">
+      <!-- Section Heading -->
+      <div class="max-w-[1280px] 2xl:max-w-[1440px] mx-auto px-4">
+        <h3
+          class="text-accent-1 font-bold text-2xl md:text-3xl leading-[1.2] tracking-[0.25px]"
+        >
+          Projects with purpose
+        </h3>
+      </div>
+
+      <!-- Projects Wrapper -->
+      <div
+        id="project_wrapper"
+        class="max-w-[1280px] 2xl:max-w-[1440px] mx-auto px-4"
+        x-data="{ 
+          projects: window.PROJECTS,
+          visibleCount: 4,
+          loadMore() {
+              this.visibleCount = Math.min(this.visibleCount + 3, this.projects.length)
+          }
+        }"
+      >
+        <!-- project -->
+        <template
+          x-for="(project, index) in projects.slice(0, visibleCount)"
+          :key="project.id"
+        >
+          <div
+            :class="{
+              'py-[60px] border-b border-lines': true,
+              'border-b-0': index === visibleCount - 1
+            }"
+          >
+            <!-- media -->
+            <div class="relative w-full aspect-video max-w-[620px]">
+              <template x-if="project.media.type === 'video'">
+                <iframe
+                  class="absolute top-0 left-0 w-full h-full"
+                  :src="project.media.url"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                >
+                </iframe>
+              </template>
+              <template x-if="project.media.type === 'image'">
+                <a
+                  :href="project.liveurl || project.githuburl"
+                  target="_blank"
+                  class="block group cursor-pointer hover:border-accent-1 active:border-accent-1 border-2 border-transparent"
+                >
+                  <div class="gradient-overlay group-hover:opacity-30"></div>
+                  <img
+                    class="w-full h-full object-contain relative z-10"
+                    :src="project.media.url"
+                    alt=""
+                  />
+                </a>
+              </template>
+            </div>
+
+            <div class="mt-[40px] max-w-[900px] flex flex-col gap-4 md:gap-6">
+              <h3
+                x-text="project.title"
+                class="font-primary font-semibold text-xl md:text-[26px] leading-[1.2] tracking-[0.5px]"
+              ></h3>
+              <p
+                x-text="project.description"
+                class="text-text-2 text-lg md:text-xl leading-[1.4] tracking-[0.25px]"
+              ></p>
+
+              <!-- <template x-if="project.question">
+                <p
+                  x-text="project.question"
+                  class="md:text-lg font-medium leading-[1.4] tracking-[0.25px]"
+                ></p>
+              </template> -->
+
+              <template x-if="project.additionalInfo">
+                <p
+                  x-text="project.additionalInfo"
+                  class="md:text-lg font-medium leading-[1.4] tracking-[0.25px]"
+                ></p>
+              </template>
+
+              <template x-if="project.readMoreText">
+                <div>
+                  <button
+                    id="openOverlay"
+                    class="relative text-accent-1 hover:text-accent-2 active:text-accent-2 cursor-pointer overflow-hidden group"
+                    :data-project-id="project.id"
+                  >
+                    <span x-text="project.readMoreText"></span>
+                    <span
+                      class="absolute left-0 bottom-0 rounded-2xl h-[2px] w-0 bg-accent-2 transition-all duration-300 ease-out group-hover:w-full group-active:w-full"
+                    ></span>
+                  </button>
+                </div>
+              </template>
+
+              <div class="flex items-center gap-x-8">
+                <template x-if="project.liveurl">
+                  <div>
+                    <a
+                      class="relative text-accent-1 hover:text-accent-2 active:text-accent-2 cursor-pointer overflow-hidden group"
+                      :href="project.liveurl"
+                      target="_blank"
+                    >
+                      <span x-text="project.liveurlCTAText">Live View</span>
+                      <span
+                        class="absolute left-0 bottom-0 rounded-2xl h-[2px] w-0 bg-accent-2 transition-all duration-300 ease-out group-hover:w-full group-active:w-full"
+                      ></span>
+                    </a>
+                  </div>
+                </template>
+                <template x-if="project.figmaurl">
+                  <div>
+                    <a
+                      class="relative text-accent-1 hover:text-accent-2 active:text-accent-2 cursor-pointer overflow-hidden group transition-all"
+                      :href="project.figmaurl"
+                      target="_blank"
+                    >
+                      <div class="flex items-center gap-1">
+                        <svg
+                          width="24"
+                          height="25"
+                          viewBox="0 0 24 25"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="group-hover:opacity-50 group-active:opacity-50"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M12 12.0586C12 10.4018 13.3432 9.05859 15 9.05859C16.6568 9.05859 18 10.4018 18 12.0586C18 13.7154 16.6568 15.0586 15 15.0586C13.3432 15.0586 12 13.7154 12 12.0586Z"
+                            fill="#1ABCFE"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M6 18.0586C6 16.4018 7.34314 15.0586 9 15.0586H12V18.0586C12 19.7154 10.6568 21.0586 9 21.0586C7.34314 21.0586 6 19.7154 6 18.0586Z"
+                            fill="#0ACF83"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M12 3.05859V9.05859H15C16.6568 9.05859 18 7.71542 18 6.05859C18 4.40174 16.6568 3.05859 15 3.05859H12Z"
+                            fill="#FF7262"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M6 6.05859C6 7.71542 7.34314 9.05859 9 9.05859H12V3.05859H9C7.34314 3.05859 6 4.40174 6 6.05859Z"
+                            fill="#F24E1E"
+                          />
+                          <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M6 12C6 13.6568 7.34314 15 9 15H12V9H9C7.34314 9 6 10.3432 6 12Z"
+                            fill="#A259FF"
+                          />
+                        </svg>
+                        <span>Figma UI</span>
+                      </div>
+                    </a>
+                  </div>
+                </template>
+                <template x-if="project.githuburl">
+                  <div>
+                    <a
+                      class="relative text-accent-1 hover:text-accent-2 active:text-accent-2 cursor-pointer overflow-hidden group transition-all"
+                      :href="project.githuburl"
+                      target="_blank"
+                    >
+                      <div class="flex items-center gap-2">
+                        <svg
+                          width="20px"
+                          height="20px"
+                          viewBox="0 0 20 20"
+                          version="1.1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                        >
+                          <title>github [#142]</title>
+                          <desc>Created with Sketch.</desc>
+                          <defs></defs>
+                          <g
+                            id="Page-1"
+                            stroke="none"
+                            stroke-width="1"
+                            fill="none"
+                            fill-rule="evenodd"
+                          >
+                            <g
+                              id="Dribbble-Light-Preview"
+                              transform="translate(-140.000000, -7559.000000)"
+                              fill="#ffffff"
+                            >
+                              <g
+                                id="icons"
+                                transform="translate(56.000000, 160.000000)"
+                              >
+                                <path
+                                  d="M94,7399 C99.523,7399 104,7403.59 104,7409.253 C104,7413.782 101.138,7417.624 97.167,7418.981 C96.66,7419.082 96.48,7418.762 96.48,7418.489 C96.48,7418.151 96.492,7417.047 96.492,7415.675 C96.492,7414.719 96.172,7414.095 95.813,7413.777 C98.04,7413.523 100.38,7412.656 100.38,7408.718 C100.38,7407.598 99.992,7406.684 99.35,7405.966 C99.454,7405.707 99.797,7404.664 99.252,7403.252 C99.252,7403.252 98.414,7402.977 96.505,7404.303 C95.706,7404.076 94.85,7403.962 94,7403.958 C93.15,7403.962 92.295,7404.076 91.497,7404.303 C89.586,7402.977 88.746,7403.252 88.746,7403.252 C88.203,7404.664 88.546,7405.707 88.649,7405.966 C88.01,7406.684 87.619,7407.598 87.619,7408.718 C87.619,7412.646 89.954,7413.526 92.175,7413.785 C91.889,7414.041 91.63,7414.493 91.54,7415.156 C90.97,7415.418 89.522,7415.871 88.63,7414.304 C88.63,7414.304 88.101,7413.319 87.097,7413.247 C87.097,7413.247 86.122,7413.234 87.029,7413.87 C87.029,7413.87 87.684,7414.185 88.139,7415.37 C88.139,7415.37 88.726,7417.2 91.508,7416.58 C91.513,7417.437 91.522,7418.245 91.522,7418.489 C91.522,7418.76 91.338,7419.077 90.839,7418.982 C86.865,7417.627 84,7413.783 84,7409.253 C84,7403.59 88.478,7399 94,7399"
+                                  id="github-[#142]"
+                                ></path>
+                              </g>
+                            </g>
+                          </g>
+                        </svg>
+                        <span>Source & Download</span>
+                      </div>
+                    </a>
+                  </div>
+                </template>
+              </div>
+            </div>
+          </div>
+        </template>
+
+        <!-- Load More button -->
+        <button
+          x-show="visibleCount < projects.length"
+          @click="loadMore()"
+          class="bg-amber-600 text-text py-1 px-1.5 rounded-xs cursor-pointer transition-all hover:bg-amber-700 active:bg-amber-700"
+        >
+          Show Me More
+        </button>
+      </div>
+    </section>
+    <!-- End: Projects -->
+
+    <!-- Overlay section -->
+    <section
+      id="overlay"
+      class="opacity-0 pointer-events-none transition-all duration-300 ease-out bg-transparent"
+    >
+      <div
+        class="relative max-w-[1280px] 2xl:max-w-[1440px] mx-auto px-4 pt-14 md:pt-20 pb-6"
+      >
+        <div class="sticky top-0 flex justify-end z-50 bg-white py-4 h-[40px]">
+          <button id="closeOverlay" class="cursor-pointer group">
+            <svg
+              class="group-hover:w-[28px] group-hover:h-[28px] group-active:w-[28px] group-active:h-[28px] transition"
+              width="24px"
+              height="24px"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5 5h2v2H5V5zm4 4H7V7h2v2zm2 2H9V9h2v2zm2 0h-2v2H9v2H7v2H5v2h2v-2h2v-2h2v-2h2v2h2v2h2v2h2v-2h-2v-2h-2v-2h-2v-2zm2-2v2h-2V9h2zm2-2v2h-2V7h2zm0 0V5h2v2h-2z"
+                class="fill-indigo-600"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <!-- content -->
+
+        <div id="overlay-content" class=""></div>
+      </div>
+    </section>
+
+    <!-- contact Info -->
+    <section
+      id="contact"
+      class="pt-[40px] md:pt-[60px] pb-[100px] border-t border-zinc-700"
+    >
+      <!-- Section Heading -->
+      <div class="max-w-[1280px] 2xl:max-w-[1440px] mx-auto px-4">
+        <h5 class="font-bold text-lg leading-[1.2] tracking-[0.25px]">
+          Let's build something
+        </h5>
+        <p
+          class="text-lg text-text mt-5 max-w-[800px] leading-[1.4] tracking-wide"
+        >
+          If you're looking to launch something new or upgrade your current
+          site? This is where you get custom-built websites and web apps that
+          works great and run smoothly.
+          <br />
+          <br />
+          Some of my toolkit includes TailwindCSS, React.js, Next.js, Laravel,
+          WordPress, PHP, MySQL, and UI/UX design, all tailored to fit your
+          business needs.
+        </p>
+        <div
+          class="text-lg text-text mt-5 max-w-[760px] leading-[1.4] tracking-wide flex items-center justify-start flex-wrap gap-0.5"
+        >
+          <span class="inline-block pr-1"
+            >Send me an email, and I'll reply quick.</span
+          >
+
+          <a
+            class="decoration-1 decoration-dotted underline underline-offset-4"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=cascade.coding@gmail.com"
+            target="_blank"
+          >
+            cascade.coding@gmail.com
+          </a>
+
+          <svg
+            width="16"
+            height="17"
+            viewBox="0 0 16 17"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 12.5L12 4.5M12 4.5H6M12 4.5V10.5"
+              stroke="#1C274C"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer/contact info -->
+    <footer>
+      <div class="bg-zinc-900 py-4 text-center text-white select-none">
+        © 2025 cascade-coding
+      </div>
+    </footer>
+
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>

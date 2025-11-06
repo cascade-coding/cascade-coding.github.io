@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+@theme {
+  --color-bg: #041509;
+  --color-text: #FFFFFF;
+  --color-text-2: #FFFFFF;
+  --color-text-3: #777777;
+  --color-accent-1: #29FE42;
+
+  --color-lines: #094B20;
+
+  --font-play: "Play", sans-serif;
+}
+
+body {
+  font-family: var(--font-play);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  position: relative;
+  opacity: 0;
+}
+
+html.activate-overlay section#overlay {
+  opacity: 1;
+  pointer-events: all;
+  background-color: white;
+}
+
+html.activate-overlay #overlay-content {
+  min-height: 100dvh;
+}
+
+html.activate-overlay section:not(#overlay) {
+  display: none;
+}
+
+
