@@ -1,3 +1,5 @@
+import { generateId } from "./utils";
+
 type MediaType = "video" | "image";
 
 interface Project {
@@ -18,9 +20,11 @@ interface Project {
   overlayContent?: string;
 }
 
+const nextId = generateId();
+
 export const projects: Project[] = [
   {
-    id: 'x001',
+    id: nextId(),
     media: {
       type: "video",
       url: "https://www.youtube.com/embed/a103ei5esOY"
@@ -106,7 +110,7 @@ export const projects: Project[] = [
     `
   },
   {
-    id: 'x002',
+    id: nextId(),
     media: {
       type: "image",
       url: "/assets/vantavpn-lg.png"
@@ -120,7 +124,7 @@ export const projects: Project[] = [
     additionalInfo: "I created this VPN UI because VPNs like this should be more common.",
   },
   {
-    id: 'x003',
+    id: nextId(),
     media: {
       type: "image",
       url: "/assets/lawfare-lg.png"
@@ -134,7 +138,21 @@ export const projects: Project[] = [
     additionalInfo: "My fascination with the legal world inspired me to design a clean, powerful UI/UX for a personal lawyer's website.",
   },
   {
-    id: 'x004',
+    id: nextId(),
+    media: {
+      type: "image",
+      url: "/assets/watchvelle-lg.png"
+    },
+    title: "Watchvelle - Premium Watch Store",
+    description: "A modern e-commerce platform crafted for a premium watch retailer, showcasing curated timepieces from respected watchmakers through a clean and structured design.",
+    question: "",
+    liveurl: "https://cascade-coding.github.io/watchvelle/",
+    liveurlCTAText: "Live View",
+    figmaurl: "https://www.figma.com/design/Kjj1PcJsPHkUYglcXvjt2I/Watchvelle?node-id=0-1&t=adgE8smDD4sRKFrp-1",
+    additionalInfo: "",
+  },
+  {
+    id: nextId(),
     media: {
       type: "image",
       url: "/assets/trueshelf-lg.png"
@@ -148,7 +166,7 @@ export const projects: Project[] = [
     additionalInfo: "I made TrueShelf because finding one life-altering book shouldn't feel like luck.",
   },
   {
-    id: 'x005',
+    id: nextId(),
     media: {
       type: "image",
       url: "/assets/dental-design-lg.png"
@@ -160,7 +178,7 @@ export const projects: Project[] = [
     githuburl: "https://github.com/cascade-coding/dental_design_theme"
   },
   {
-    id: 'x006',
+    id: nextId(),
     media: {
       type: "image",
       url: "/assets/stride-lg.png"
